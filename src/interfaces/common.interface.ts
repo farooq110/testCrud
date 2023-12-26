@@ -29,32 +29,3 @@ export interface FormFieldsAttributes {
   multiple?: boolean,
   selectType?: string  
 }
-
-export enum AxiosMethod {
-  POST = "post",
-  GET = "get",
-  UPDATE = "update",
-  DELETE = "delete",
-}
-
-export interface RequestContext {
-  method: string
-  url: string
-  data?: AxiosMethod
-  headers?: any
-}
-
-export interface ResponseContext {
-  data: any
-  error: string
-  ok: boolean
-}
-
-export enum eRoles {
-  ADMIN = "admin",
-  EMPLOYEE = "employee",
-  ACCOUNTANT = "accountant",
-  BDE = "business development executive",
-  SUPER_ADMIN = "super admin",
-  USER = "user",
-}

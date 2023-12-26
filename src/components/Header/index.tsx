@@ -1,18 +1,18 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import {
   Box,
   IconButton,
   Stack,
   Typography,
-  useMediaQuery
-} from '@mui/material';
-import { alpha } from '@mui/material/styles';
+  useMediaQuery,
+} from "@mui/material";
+import { alpha } from "@mui/material/styles";
 
 const SIDE_NAV_WIDTH = 280;
 const TOP_NAV_HEIGHT = 64;
 
-export const TopNav = (props:any) => {
+export const TopNav = (props: any) => {
   const { onNavOpen } = props;
   const lgUp = useMediaQuery("(min-width:1200px)");
 
@@ -21,15 +21,16 @@ export const TopNav = (props:any) => {
       <Box
         component="header"
         sx={{
-          backdropFilter: 'blur(6px)',
-          backgroundColor: (theme) => alpha(theme.palette.background.default, 0.8),
-          position: 'sticky',
+          backdropFilter: "blur(6px)",
+          backgroundColor: (theme) =>
+            alpha(theme.palette.background.default, 0.8),
+          position: "sticky",
           left: {
-            lg: `${SIDE_NAV_WIDTH}px`
+            lg: `${SIDE_NAV_WIDTH}px`,
           },
           top: 0,
           width: "100%",
-          zIndex: (theme) => theme.zIndex.appBar
+          zIndex: (theme) => theme.zIndex.appBar,
         }}
       >
         <Stack
@@ -39,23 +40,19 @@ export const TopNav = (props:any) => {
           spacing={2}
           sx={{
             minHeight: TOP_NAV_HEIGHT,
-            px: 2
+            px: 2,
           }}
         >
-          <Stack
-            alignItems="center"
-            direction="row"
-            spacing={2}
-          >
+          <Stack alignItems="center" direction="row" spacing={2}>
             {!lgUp && (
               <IconButton onClick={onNavOpen}>
                 {/* <SvgIcon fontSize="small">
                   <Bars3Icon />
                 </SvgIcon> */}
-                click
+                open
               </IconButton>
             )}
-          <Typography sx={{fontSize:"40px"}}>CUSTOMERS</Typography>
+            <Typography sx={{ fontSize: "40px" }}>CUSTOMERS</Typography>
           </Stack>
         </Stack>
       </Box>
@@ -64,5 +61,5 @@ export const TopNav = (props:any) => {
 };
 
 TopNav.propTypes = {
-  onNavOpen: PropTypes.func
+  onNavOpen: PropTypes.func,
 };
